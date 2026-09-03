@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenCampus Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <aside class="sidebar" id="sidebar">
+
+        <h2 class="logo"><a href="landing.html" style="color: white; text-decoration: none;">🌱 GreenCampus</a></h2>
+
+        <p class="menu-title">MAIN</p>
+
+<div class="menu-section">
+
+    <button class="menu-item active"
+        onclick="showPage('dashboard', this)">
+        <span>🏠</span>
+        Dashboard
+    </button>
+
+    <button class="menu-item"
+        onclick="showPage('reports', this)">
+        <span>📊</span>
+        Reports
+    </button>
+
+</div>
+
+
+<p class="menu-title">MANAGEMENT</p>
+
+<div class="menu-section">
+
+    <button class="menu-item"
+        onclick="showPage('ideas', this)">
+        <span>💡</span>
+        Ideas
+    </button>
+
+    <button class="menu-item"
+        onclick="showPage('projects', this)">
+        <span>🏗️</span>
+        Projects
+    </button>
+
+    <button class="menu-item"
+        onclick="showPage('campaigns', this)">
+        <span>📢</span>
+        Campaigns
+    </button>
+
+</div>
+
+
+<p class="menu-title">USERS & ACCESS</p>
+
+<div class="menu-section">
+
+    <button class="menu-item"
+        onclick="showPage('students', this)">
+        <span>🎓</span>
+        Students
+    </button>
+
+    <button class="menu-item"
+        onclick="window.location.href='login.php'">
+        <span>🔑</span>
+        Login
+    </button>
+
+    <button class="menu-item"
+        onclick="window.location.href='register.php'">
+        <span>📝</span>
+        Register
+    </button>
+
+</div>
+
+    <button class="menu-item logout"
+        onclick="window.location.href='landing.html'"
+        style="background: rgba(255,255,255,0.1); color: white;">
+        <span>🌿</span>
+        Landing Page
+    </button>
+
+    </aside>
+
+
+
+    <main class="main">
+
+
+        <header class="topbar">
+
+            <button class="mobile-btn" onclick="toggleSidebar()">
+                ☰
+            </button>
+
+            <div>
+                <h2>GreenCampus Portal</h2>
+                <p>Welcome! Explore green projects, ideas, and campaigns.</p>
+            </div>
+
+            <div class="profile" style="display: flex; gap: 10px; align-items: center;">
+
+                <a href="login.php" style="background: #2e7d32; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600;">
+                    Login
+                </a>
+
+                <a href="register.php" style="background: #e8f5e9; color: #2e7d32; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid #c8e6c9;">
+                    Register
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <section id="dashboard" class="page active">
+
+            <h1>Dashboard</h1>
+
+            <p class="subtitle">
+                Here is what is happening in GreenCampus.
+            </p>
+
+
+        
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>🎓</span>
+
+                    <div>
+                        <h3>250</h3>
+                        <p>Students</p>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <span>💡</span>
+
+                    <div>
+                        <h3>18</h3>
+                        <p>Pending Ideas</p>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <span>🏗️</span>
+
+                    <div>
+                        <h3>12</h3>
+                        <p>Active Projects</p>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <span>📢</span>
+
+                    <div>
+                        <h3>8</h3>
+                        <p>Campaigns</p>
+                    </div>
+                </div>
+
+
+                <div class="stat">
+                    <span>🤝</span>
+
+                    <div>
+                        <h3>420</h3>
+                        <p>Registrations</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- MANAGEMENT -->
+
+            <h2 class="section-title">
+                Manage GreenCampus
+            </h2>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="icon">
+                        💡
+                    </div>
+
+                    <h2>Student Ideas</h2>
+
+                    <p>
+                        Review student ideas and approve
+                        or reject them.
+                    </p>
+
+                    <button onclick="showPage('ideas')">
+                        View Ideas
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        🏗️
+                    </div>
+
+                    <h2>Campus Projects</h2>
+
+                    <p>
+                        Create projects and update
+                        their progress.
+                    </p>
+
+                    <button onclick="showPage('projects')">
+                        Manage Projects
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        📢
+                    </div>
+
+                    <h2>Campaigns</h2>
+
+                    <p>
+                        Organize clean-up, tree planting
+                        and other activities.
+                    </p>
+
+                    <button onclick="showPage('campaigns')">
+                        Manage Campaigns
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        📊
+                    </div>
+
+                    <h2>Impact Reports</h2>
+
+                    <p>
+                        See student participation and
+                        GreenCampus impact.
+                    </p>
+
+                    <button onclick="showPage('reports')">
+                        View Reports
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="ideas" class="page">
+
+            <div class="page-head">
+
+                <div>
+                    <h1>💡 Student Ideas</h1>
+
+                    <p class="subtitle">
+                        Review ideas submitted by students.
+                    </p>
+                </div>
+
+                <button onclick="addIdea()">
+                    + Add Idea
+                </button>
+
+            </div>
+
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Idea</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Kasun</td>
+
+                            <td>
+                                More recycling bins
+                            </td>
+
+                            <td>
+                                Recycling
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="small"
+                                    onclick="approveIdea(this)">
+                                    Approve
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Sarah</td>
+
+                            <td>
+                                Campus Garden
+                            </td>
+
+                            <td>
+                                Environment
+                            </td>
+
+                            <td>
+                                <span class="status approved">
+                                    Approved
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="small"
+                                    onclick="alert('Idea details will open here.')">
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="projects" class="page">
+
+            <div class="page-head">
+
+                <div>
+
+                    <h1>🏗️ Campus Projects</h1>
+
+                    <p class="subtitle">
+                        Manage GreenCampus projects.
+                    </p>
+
+                </div>
+
+                <button onclick="addProject()">
+                    + New Project
+                </button>
+
+            </div>
+
+
+            <div class="project-grid">
+
+
+                <div class="project">
+
+                    <div class="project-image">
+                        🌳
+                    </div>
+
+                    <div class="project-body">
+
+                        <h2>
+                            Campus Tree Planting
+                        </h2>
+
+                        <p>
+                            Planting trees around the
+                            university.
+                        </p>
+
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <span>
+                                70%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div style="width:70%"></div>
+
+                        </div>
+
+
+                        <button onclick="alert('Project details will open here.')">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project">
+
+                    <div class="project-image">
+                        ♻️
+                    </div>
+
+                    <div class="project-body">
+
+                        <h2>
+                            Plastic-Free Campus
+                        </h2>
+
+                        <p>
+                            Reducing single-use plastic
+                            around campus.
+                        </p>
+
+
+                        <div class="progress-label">
+
+                            <span>
+                                Progress
+                            </span>
+
+                            <span>
+                                45%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div style="width:45%"></div>
+
+                        </div>
+
+
+                        <button onclick="alert('Project details will open here.')">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAMPAIGNS -->
+
+        <section id="campaigns" class="page">
+
+            <div class="page-head">
+
+                <div>
+
+                    <h1>📢 Campaigns</h1>
+
+                    <p class="subtitle">
+                        Manage volunteering campaigns.
+                    </p>
+
+                </div>
+
+                <button onclick="addCampaign()">
+                    + New Campaign
+                </button>
+
+            </div>
+
+
+            <div class="campaigns">
+
+
+                <div class="campaign">
+
+                    <div class="date">
+
+                        <b>25</b>
+
+                        <span>
+                            AUG
+                        </span>
+
+                    </div>
+
+
+                    <div class="campaign-info">
+
+                        <h2>
+                            Campus Clean-Up Day
+                        </h2>
+
+                        <p>
+                            📍 Main Campus
+                        </p>
+
+                        <p>
+                            👥 35 / 50 Volunteers
+                        </p>
+
+                    </div>
+
+
+                    <button onclick="alert('Campaign management will open here.')">
+                        Manage
+                    </button>
+
+                </div>
+
+
+                <div class="campaign">
+
+                    <div class="date">
+
+                        <b>02</b>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+
+                    <div class="campaign-info">
+
+                        <h2>
+                            Tree Planting Day
+                        </h2>
+
+                        <p>
+                            📍 University Garden
+                        </p>
+
+                        <p>
+                            👥 20 / 40 Volunteers
+                        </p>
+
+                    </div>
+
+
+                    <button onclick="alert('Campaign management will open here.')">
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTS -->
+
+        <section id="reports" class="page">
+
+            <div class="page-head">
+
+                <div>
+
+                    <h1>
+                        📊 Impact Reports
+                    </h1>
+
+                    <p class="subtitle">
+                        See the impact of GreenCampus.
+                    </p>
+
+                </div>
+
+                <button onclick="downloadReport()">
+                    Download Report
+                </button>
+
+            </div>
+
+
+            <div class="report-grid">
+
+
+                <div class="report">
+
+                    <span>🌳</span>
+
+                    <h2>
+                        350
+                    </h2>
+
+                    <p>
+                        Trees Planted
+                    </p>
+
+                </div>
+
+
+                <div class="report">
+
+                    <span>♻️</span>
+
+                    <h2>
+                        720 KG
+                    </h2>
+
+                    <p>
+                        Waste Recycled
+                    </p>
+
+                </div>
+
+
+                <div class="report">
+
+                    <span>🤝</span>
+
+                    <h2>
+                        420
+                    </h2>
+
+                    <p>
+                        Volunteer Registrations
+                    </p>
+
+                </div>
+
+
+                <div class="report">
+
+                    <span>💡</span>
+
+                    <h2>
+                        85
+                    </h2>
+
+                    <p>
+                        Ideas Submitted
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENTS -->
+
+        <section id="students" class="page">
+
+            <h1>
+                🎓 Students
+            </h1>
+
+            <p class="subtitle">
+                View registered GreenCampus students.
+            </p>
+
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Joined</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Kasun Perera
+                            </td>
+
+                            <td>
+                                kasun@example.com
+                            </td>
+
+                            <td>
+                                12 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status approved">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Sarah Fernando
+                            </td>
+
+                            <td>
+                                sarah@example.com
+                            </td>
+
+                            <td>
+                                10 Aug 2026
+                            </td>
+
+                            <td>
+                                <span class="status approved">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            © 2026 GreenCampus |
+            Making our campus greener 🌱
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
